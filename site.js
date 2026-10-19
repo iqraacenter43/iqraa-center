@@ -19,22 +19,11 @@
   render('shorts', c.videos && c.videos.shorts, true);
   render('long-videos', c.videos && c.videos.long, false);
   const pl = document.getElementById('playlists');
-  if (pl) { const L = (c.videos && c.videos.playlists) || []; if (!L.length) pl.parentElement.style.display = 'none'; else pl.innerHTML = L.map(p => '<a class="pl-card" href="' + p.url + '" target="_blank" rel="noopener noreferrer"><span class="pl-n">' + p.count + '</span><b>' + p.title + '</b><small>&#9654; YouTube</small></a>').join(''); }
-  const vs = document.getElementById('videos');
-  if (vs && !document.querySelector('#videos .video-card')) { const b = document.getElementById('youtube-button'); if (b) b.parentElement.style.marginTop = '0'; }
-
-  // Pay buttons: PayPal.Me if set, otherwise WhatsApp message
-  document.querySelectorAll('[data-pkg]').forEach(a => {
-    const amount = a.dataset.amount, pkg = a.dataset.pkg;
-    if (c.paypalMeUser) { a.href = 'https://www.paypal.com/paypalme/' + encodeURIComponent(c.paypalMeUser) + '/' + amount + 'USD'; a.target = '_blank'; a.rel = 'noopener noreferrer'; }
-    else { a.href = c.whatsapp + '?text=' + encodeURIComponent('Hello Iqraa Center! I finished my trial lesson and I want to pay for: ' + pkg + ' ($' + amount + '). My name: '); a.dataset.i18n = 'payWA'; a.textContent = 'Pay on WhatsApp'; }
-  });
-
-  // Auto-advance after a form is submitted (the form frame reloads on submit)
-  const fr = document.querySelector('iframe.form-frame[data-next]');
-  if (fr) {
-    let n = 0, done = false; const need = (c.formLoads && c.formLoads[fr.dataset.form]) || 2;
-    fr.addEventListener('load', () => { n++; if (n >= need && !done) { done = true; countdown(fr.dataset.next); } });
+  if (pl) {
+    const L = (c.videos && c.videos.playlists) || [];
+    if (!L.length) pl.parentElement.style.display = 'none';
+    else pl.innerHTML = L.map(p => { const m = String(p.url).match(/list=([A-Za-z0-9_-]+)/); if (!m) return '';
+      return '<article class="video-card"><div class="pl-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/videoseries?list=' + m[1] + '" title="' + p.title + '" allow="encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><h3>' + p.title + '</h3><p class="pl-meta">&#9654; ' + p.count + ' &middot; <a href="' + p.url + '" target="_blank" rel="noopener noreferrer" data-i18n="openPlaylist">Open on YouTube</a></p></article>'; }).join('');
   }
   function countdown(url) {
     const b = document.getElementById('auto-banner'); if (!b) return;

@@ -107,51 +107,7 @@ iframe.form-frame{width:100%;height:1500px;border:0;background:#fff;border-radiu
 .auto-banner[hidden]{display:none}
 .auto-banner .btn{padding:9px 16px;font-size:14px;width:auto}
 
-/* ===== Visual refresh v2 ===== */
-:root{--gold2:#F0C66B;--shadow:0 10px 30px -12px #14233F33;--shadow-lg:0 24px 60px -20px #14233F55;--r:16px}
-body{background:var(--paper);-webkit-font-smoothing:antialiased}
-[lang=ar] body,[dir=rtl] body{font-family:"Tajawal",Lexend,system-ui,sans-serif}
-header{background:radial-gradient(1200px 500px at 85% -10%,#2A4372 0%,transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);position:relative;overflow:hidden}
-header::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.6}
-nav{position:relative;z-index:2}
-nav a.small{padding:6px 10px;border-radius:8px;transition:background .2s,color .2s}
-nav a.small:hover{background:#ffffff14;color:var(--gold2)}
-.btn{border-radius:12px;transition:transform .2s,box-shadow .2s,background .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn.gold{background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 10px 24px -10px #D9A441AA}
-.btn.gold:hover{box-shadow:0 16px 30px -10px #D9A441CC}
-.btn.line:hover{background:#ffffff12;border-color:var(--gold)}
-.hero h1{letter-spacing:-.02em}
-.letter{text-shadow:0 0 60px #D9A44155;animation:floaty 6s ease-in-out infinite}
-@keyframes floaty{50%{transform:translateY(-10px)}}
-.logo-card{border-radius:28px;box-shadow:var(--shadow-lg);border:1px solid #D9A44166}
-section{padding:80px 0}
-h2{letter-spacing:-.01em;position:relative;padding-bottom:14px}
-h2::after{content:"";position:absolute;bottom:0;inset-inline-start:0;width:56px;height:3px;border-radius:3px;background:var(--gold)}
-.final h2::after,.center h2::after{inset-inline-start:50%;transform:translateX(-50%)}
-[dir=rtl] .final h2::after,[dir=rtl] .center h2::after{transform:translateX(50%)}
-.steps li{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:var(--r);padding:20px!important;box-shadow:var(--shadow);transition:transform .25s}
-.steps li:hover{transform:translateY(-4px)}
-.goals{background:linear-gradient(180deg,var(--tint),var(--paper))}
-.goal-list>div,.panel,.pay-card,.video-card,.pl-card{border-radius:var(--r);box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
-.goal-list>div:hover,.pay-card:hover,.video-card:hover,.pl-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
-.price-grid table{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
-.price-grid caption{padding:0 4px 12px}
-th{background:var(--navy);color:var(--paper);font-weight:600}
-tbody tr:nth-child(even) td{background:#FAFBFD}
-td:last-child{color:var(--navy)}
-.teacher{background:linear-gradient(160deg,var(--navy),var(--navy2))}
-.faq details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
-.faq details[open]{border-color:var(--gold);box-shadow:var(--shadow)}
-.faq summary{list-style:none;display:flex;justify-content:space-between;gap:12px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--gold);font-size:22px;line-height:1;transition:transform .2s}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.final{background:linear-gradient(135deg,var(--gold2),var(--gold))}
-.video-card .play{background:linear-gradient(transparent,#0006)}
-.pay-card .price{color:var(--gold);font-size:34px}
-iframe.form-frame{border-radius:var(--r);box-shadow:var(--shadow-lg)}
-footer{background:#0F1B31;padding:36px 0}
-.language{border-radius:10px;cursor:pointer}
-@media(max-width:820px){section{padding:56px 0}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.pl-frame{aspect-ratio:16/9;background:#14233F}
+.pl-frame iframe{width:100%;height:100%;border:0;display:block}
+.pl-meta{margin:0;padding:0 14px 14px;font-size:14px;color:var(--mute)}
+.pl-meta a{font-weight:600;color:var(--navy)}

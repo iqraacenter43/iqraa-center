@@ -172,6 +172,15 @@ Object.assign(translations.es, {stepPay:"4. Pago"});
 Object.assign(translations.tr, {stepPay:"4. Ödeme"});
 Object.assign(translations.zh, {stepPay:"4. 付款"});
 Object.assign(translations.id, {stepPay:"4. Pembayaran"});
+Object.assign(translations.en, {openPlaylist:"Open on YouTube"});
+Object.assign(translations.ar, {openPlaylist:"افتح على يوتيوب"});
+Object.assign(translations.fr, {openPlaylist:"Ouvrir sur YouTube"});
+Object.assign(translations.de, {openPlaylist:"Auf YouTube öffnen"});
+Object.assign(translations.ru, {openPlaylist:"Открыть на YouTube"});
+Object.assign(translations.es, {openPlaylist:"Abrir en YouTube"});
+Object.assign(translations.tr, {openPlaylist:"YouTube’da aç"});
+Object.assign(translations.zh, {openPlaylist:"在 YouTube 打开"});
+Object.assign(translations.id, {openPlaylist:"Buka di YouTube"});
 const labels = {en:"English",ar:"العربية",fr:"Français",de:"Deutsch",ru:"Русский",es:"Español",tr:"Türkçe",zh:"中文",id:"Bahasa Indonesia"};
 function applyLang(lang) {
   const dict = translations[lang] || translations.en;
