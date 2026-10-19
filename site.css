@@ -99,3 +99,10 @@ iframe.form-frame{width:100%;height:1500px;border:0;background:#fff;border-radiu
 .pl-card{display:block;text-decoration:none;color:inherit;background:var(--tint);border:1px solid var(--line);border-radius:12px;padding:18px}
 .pl-card b{display:block;margin:6px 0}.pl-card small{color:var(--mute)}
 .pl-n{display:inline-grid;place-items:center;min-width:34px;height:34px;border-radius:50%;background:var(--navy);color:var(--gold);font-weight:700}
+
+.steps-pills a{padding:5px 11px;border:1px solid #FBF7EE55;border-radius:99px;color:#D5DCEA;text-decoration:none}
+.steps-pills a:hover{border-color:var(--gold);color:#fff}
+.steps-pills a.on{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:700}
+.auto-banner{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;background:var(--navy);color:var(--paper);border:2px solid var(--gold);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;box-shadow:0 8px 30px #0006}
+.auto-banner[hidden]{display:none}
+.auto-banner .btn{padding:9px 16px;font-size:14px;width:auto}

@@ -29,4 +29,18 @@
     if (c.paypalMeUser) { a.href = 'https://www.paypal.com/paypalme/' + encodeURIComponent(c.paypalMeUser) + '/' + amount + 'USD'; a.target = '_blank'; a.rel = 'noopener noreferrer'; }
     else { a.href = c.whatsapp + '?text=' + encodeURIComponent('Hello Iqraa Center! I finished my trial lesson and I want to pay for: ' + pkg + ' ($' + amount + '). My name: '); a.dataset.i18n = 'payWA'; a.textContent = 'Pay on WhatsApp'; }
   });
+
+  // Auto-advance after a form is submitted (the form frame reloads on submit)
+  const fr = document.querySelector('iframe.form-frame[data-next]');
+  if (fr) {
+    let n = 0, done = false; const need = (c.formLoads && c.formLoads[fr.dataset.form]) || 2;
+    fr.addEventListener('load', () => { n++; if (n >= need && !done) { done = true; countdown(fr.dataset.next); } });
+  }
+  function countdown(url) {
+    const b = document.getElementById('auto-banner'); if (!b) return;
+    let t = 6; const num = document.getElementById('count'); num.textContent = t; b.hidden = false;
+    document.getElementById('go-now').href = url;
+    const id = setInterval(() => { t--; num.textContent = t; if (t <= 0) { clearInterval(id); location.href = url; } }, 1000);
+    document.getElementById('stay').onclick = () => { clearInterval(id); b.hidden = true; };
+  }
 })();

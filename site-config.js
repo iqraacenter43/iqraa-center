@@ -13,6 +13,9 @@ window.IQRAA_CONFIG = {
     tiktok: "https://www.tiktok.com/@iqraacenterr",
     youtube: "https://www.youtube.com/@IqraaCenter454"
   },
+  // How many times the form frame loads before we treat it as submitted.
+  // 2 = single-page form (form loads once, then once more after Submit).
+  formLoads: { registration: 2, test: 2 },
   // Paste full YouTube links. Optional title: {url:"https://...", title:"Letter Ayn"}
   videos: {
     shorts: [
